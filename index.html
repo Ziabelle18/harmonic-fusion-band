@@ -30,6 +30,10 @@
     footer{text-align:center;padding:45px 20px;color:#817b72;font-size:12px;letter-spacing:2px;border-top:1px solid #24211c}
     @media(max-width:850px){.navlinks a:not(:last-child){display:none}.hero{min-height:620px}.video-grid,.about-grid,.duo-grid,.contact-grid{grid-template-columns:1fr}.video:first-child,.video{min-height:280px}.logos{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.gallery .photo:nth-child(1),.gallery .photo:nth-child(5){grid-column:span 1}}
     @media(max-width:520px){nav{min-height:66px}.brandtext{font-size:10px}.monogram{font-size:28px}.navlinks{gap:12px}.hero-inner{padding:70px 0}h1{font-size:54px}.lead{font-size:14px;letter-spacing:3px}.roles{line-height:2}.buttons .btn{width:100%;text-align:center}section{padding:70px 0}.copy h2{font-size:38px}.logos,.gallery{grid-template-columns:1fr}.photo{min-height:350px}}
+
+    .photo{overflow:hidden;position:relative;padding:0}.photo img{width:100%;height:100%;object-fit:cover;display:block}.hero{background-image:linear-gradient(90deg,rgba(6,7,8,.97) 0%,rgba(6,7,8,.82) 42%,rgba(6,7,8,.20) 72%,rgba(6,7,8,.08) 100%),url('images/hero-duo.jpg');background-size:cover;background-position:center 38%}.about-photo{min-height:620px}.about-photo img{object-position:center 35%}.profile-photo{height:480px}.profile-photo img{object-position:center 30%}.gallery .photo{height:320px}.gallery .photo img{transition:transform .5s ease}.gallery .photo:hover img{transform:scale(1.025)}
+    @media(max-width:850px){.hero{background-position:62% center}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,7,8,.94),rgba(6,7,8,.58))}.about-photo{min-height:520px}}
+    @media(max-width:520px){.hero{background-position:63% center}.profile-photo{height:420px}.gallery .photo{height:360px}}
   </style>
 </head>
 <body>
@@ -54,7 +58,7 @@
 
 <section id="videos">
   <div class="wrap">
-    <div class="section-head"><div class="gold">Hear Harmonic Fusion</div><h2>Live Performance</h2><p>Our performance videos will appear here. The main showreel is placed first so bookers can hear the duo immediately.</p></div>
+    <div class="section-head"><div class="gold">Hear Harmonic Fusion</div><h2>Live Performance</h2><p>Performance showreel coming next. The site is ready for the final video once media hosting is connected.</p></div>
     <div class="video-grid">
       <div class="video"><div><div class="play">▶</div><strong>MAIN SHOWREEL</strong><p style="color:#777">Upload video from the admin later</p></div></div>
       <div class="video"><div><div class="play">▶</div><strong>LOUNGE SET</strong></div></div>
@@ -65,7 +69,7 @@
 
 <section id="about">
   <div class="wrap about-grid">
-    <div class="photo">YOUR DUO PERFORMANCE PHOTO</div>
+    <div class="photo about-photo"><img src="images/live-1.jpg" alt="Harmonic Fusion performing live at Mumian Hangzhou" loading="lazy"></div>
     <div class="copy"><div class="gold">Our Story</div><h2>Two Artists.<br>One Sound.</h2><p>Harmonic Fusion Band is an international live music duo combining expressive vocals with the warm, distinctive sound of the flugelhorn.</p><p>With experience performing in professional hotel and hospitality settings, the duo creates refined live entertainment suited to elegant lounges, resorts, cruises and special events.</p></div>
   </div>
 </section>
@@ -74,8 +78,8 @@
   <div class="wrap">
     <div class="section-head"><div class="gold">Meet The Duo</div><h2>Harmonic Fusion</h2></div>
     <div class="duo-grid">
-      <article class="duo-card"><div class="photo">KRIZZIA PHOTO</div><div class="duo-copy"><div class="gold">Lead Vocalist</div><h3>Krizzia</h3><p>Professional vocalist with international live entertainment experience. Full biography and downloadable CV will be added here.</p><a class="btn" href="#" onclick="return false">CV COMING SOON</a></div></article>
-      <article class="duo-card"><div class="photo">LESTER PHOTO WITH FLUGELHORN</div><div class="duo-copy"><div class="gold">Flugelhorn</div><h3>Lester</h3><p>Professional brass musician specializing in the warm and mellow sound of the flugelhorn for sophisticated hotel and lounge performances. Full biography and CV will be added here.</p><a class="btn" href="#" onclick="return false">CV COMING SOON</a></div></article>
+      <article class="duo-card"><div class="photo profile-photo"><img src="images/krizzia.jpg" alt="Krizzia, lead vocalist of Harmonic Fusion" loading="lazy"></div><div class="duo-copy"><div class="gold">Lead Vocalist</div><h3>Krizzia</h3><p>Professional vocalist with international live entertainment experience. Full biography and downloadable CV will be added here.</p><a class="btn" href="#" onclick="return false">CV COMING SOON</a></div></article>
+      <article class="duo-card"><div class="photo profile-photo"><img src="images/lester.jpg" alt="Lester, flugelhorn player of Harmonic Fusion" loading="lazy"></div><div class="duo-copy"><div class="gold">Flugelhorn</div><h3>Lester</h3><p>Professional brass musician specializing in the warm and mellow sound of the flugelhorn for sophisticated hotel and lounge performances. Full biography and CV will be added here.</p><a class="btn" href="#" onclick="return false">CV COMING SOON</a></div></article>
     </div>
   </div>
 </section>
@@ -85,7 +89,13 @@
  <div class="logos"><div class="logo-box">HOTEL / VENUE</div><div class="logo-box">HOTEL / VENUE</div><div class="logo-box">HOTEL / VENUE</div><div class="logo-box">HOTEL / VENUE</div></div></div>
 </section>
 
-<section id="gallery"><div class="wrap"><div class="section-head"><div class="gold">On Stage</div><h2>Gallery</h2></div><div class="gallery"><div class="photo">PERFORMANCE PHOTO</div><div class="photo">PHOTO</div><div class="photo">PHOTO</div><div class="photo">PHOTO</div><div class="photo">PERFORMANCE PHOTO</div></div></div></section>
+<section id="gallery"><div class="wrap"><div class="section-head"><div class="gold">On Stage</div><h2>Gallery</h2></div><div class="gallery">
+<div class="photo"><img src="images/live-2.jpg" alt="Harmonic Fusion live performance" loading="lazy"></div>
+<div class="photo"><img src="images/krizzia-lifestyle.jpg" alt="Krizzia portrait" loading="lazy"></div>
+<div class="photo"><img src="images/lester-lifestyle.jpg" alt="Lester portrait" loading="lazy"></div>
+<div class="photo"><img src="images/studio-duo.jpg" alt="Harmonic Fusion studio portrait" loading="lazy"></div>
+<div class="photo"><img src="images/live-3.jpg" alt="Krizzia performing live" loading="lazy"></div>
+</div></div></section>
 
 <section id="repertoire"><div class="wrap"><div class="section-head"><div class="gold">Versatile Live Music</div><h2>Repertoire</h2><p>A flexible selection of music designed for hotel lounges, dining, special occasions and international audiences.</p></div><div class="repertoire"><span class="pill">Pop</span><span class="pill">Jazz</span><span class="pill">Soul & R&B</span><span class="pill">Ballads</span><span class="pill">Lounge</span><span class="pill">Classics</span><span class="pill">Contemporary</span></div></div></section>
 
