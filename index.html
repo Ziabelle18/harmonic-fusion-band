@@ -57,6 +57,46 @@
     @media(max-width:850px){.gallery{grid-template-columns:1fr 1fr}.gallery .photo:nth-child(n){grid-column:span 1}.gallery .photo:nth-child(5){grid-column:1/-1}}
     @media(max-width:520px){.gallery{grid-template-columns:1fr}.gallery .photo:nth-child(n){grid-column:1}}
 
+
+    /* IMAGE DISPLAY FIX — keep full photos visible without cutting heads/faces */
+    .hero{
+      background-size:contain!important;
+      background-repeat:no-repeat!important;
+      background-position:right center!important;
+      background-color:#060708!important;
+    }
+    .profile-photo{
+      height:auto!important;
+      min-height:0!important;
+      background:#0b0d0e;
+    }
+    .profile-photo img{
+      width:100%!important;
+      height:auto!important;
+      object-fit:contain!important;
+      object-position:center!important;
+      display:block!important;
+    }
+    .about-photo{
+      min-height:0!important;
+      height:auto!important;
+      background:#0b0d0e;
+    }
+    .about-photo img{
+      width:100%!important;
+      height:auto!important;
+      object-fit:contain!important;
+      object-position:center!important;
+      display:block!important;
+    }
+    .gallery .photo{height:auto!important;min-height:0!important;overflow:hidden;background:#0b0d0e}
+    .gallery .photo img{width:100%!important;height:auto!important;object-fit:contain!important;object-position:center!important;display:block!important}
+    @media(max-width:850px){
+      .hero{background-size:cover!important;background-position:center center!important;}
+    }
+    @media(max-width:520px){
+      .hero{background-size:cover!important;background-position:center center!important;}
+    }
 </style>
 </head>
 <body>
