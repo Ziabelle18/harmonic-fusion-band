@@ -128,16 +128,15 @@
           rgba(6,7,8,.42) 100%),
         linear-gradient(0deg,rgba(6,7,8,.28),transparent 34%,transparent 76%,rgba(6,7,8,.18));
     }
-    /* The original photo remains sharp and almost unzoomed. Its outer edges fade
-       into the blurred copy instead of ending in a visible rectangle. */
+    /* The sharp photo covers the WHOLE hero. This is what removes the hard
+       vertical edge: the dark area on the left is now an overlay, not an
+       empty area beside a separate image panel. */
     .hero-photo-main{
       position:absolute;z-index:-2;inset:0;
       background-image:url('hero-duo.jpg');
       background-repeat:no-repeat;
-      background-size:auto 102%;
-      background-position:72% center;
-      -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.20) 11%,#000 24%,#000 88%,rgba(0,0,0,.55) 96%,transparent 100%);
-      mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.20) 11%,#000 24%,#000 88%,rgba(0,0,0,.55) 96%,transparent 100%);
+      background-size:cover;
+      background-position:center 44%;
     }
     .hero .hero-inner{
       width:min(1180px,90%);max-width:none!important;margin:0 auto!important;
@@ -146,12 +145,12 @@
     .hero .hero-inner>*{max-width:520px}
     .hero h1{font-size:clamp(58px,6vw,88px)!important;line-height:.88!important}
     @media(max-width:1000px){
-      .hero-photo-main{background-size:auto 100%;background-position:76% center}
+      .hero-photo-main{background-size:cover;background-position:54% center}
       .hero .hero-inner>*{max-width:470px}
       .hero h1{font-size:clamp(54px,7vw,76px)!important}
     }
     @media(max-width:850px){
-      .hero-photo-main{opacity:.74;background-size:cover;background-position:60% center;-webkit-mask-image:none;mask-image:none}
+      .hero-photo-main{opacity:.74;background-size:cover;background-position:60% center}
       .hero::after{background:linear-gradient(90deg,rgba(6,7,8,.95),rgba(6,7,8,.48)),linear-gradient(0deg,rgba(6,7,8,.52),transparent 55%)}
       .hero .hero-inner>*{max-width:560px}
     }
