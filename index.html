@@ -97,6 +97,52 @@
     @media(max-width:520px){
       .hero{background-size:cover!important;background-position:center center!important;}
     }
+
+    /* HERO COMPOSITION FIX — centered duo, soft blended sides, text clear of faces */
+    .hero{
+      min-height:calc(100vh - 74px)!important;
+      position:relative!important;
+      overflow:hidden!important;
+      background:#060708!important;
+      isolation:isolate;
+    }
+    /* blurred full-width copy of the photo fills the empty sides */
+    .hero::before{
+      content:"";position:absolute;inset:-28px;z-index:-3;
+      background-image:url('hero-duo.jpg');
+      background-size:cover;background-position:center 45%;
+      filter:blur(28px) brightness(.32) saturate(.8);
+      transform:scale(1.08);opacity:.78;
+    }
+    /* dark cinematic blend, strongest behind the copy */
+    .hero::after{
+      content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+      background:linear-gradient(90deg,rgba(6,7,8,.98) 0%,rgba(6,7,8,.92) 24%,rgba(6,7,8,.62) 40%,rgba(6,7,8,.10) 55%,rgba(6,7,8,.10) 82%,rgba(6,7,8,.48) 100%);
+    }
+    /* sharp main photo: only a tiny zoom, both people kept visible */
+    .hero-photo-main{
+      position:absolute;z-index:-2;top:0;bottom:0;left:42%;right:5%;
+      background-image:url('hero-duo.jpg');
+      background-repeat:no-repeat;background-size:contain;background-position:center center;
+      transform:scale(1.035);transform-origin:center center;
+    }
+    .hero .hero-inner{
+      width:min(1180px,90%);max-width:none!important;margin:0 auto!important;
+      padding:90px 0!important;
+    }
+    .hero .hero-inner>*{max-width:520px}
+    .hero h1{font-size:clamp(58px,6vw,88px)!important;line-height:.88!important}
+    @media(max-width:1000px){
+      .hero-photo-main{left:38%;right:0;transform:scale(1.02)}
+      .hero .hero-inner>*{max-width:470px}
+      .hero h1{font-size:clamp(54px,7vw,76px)!important}
+    }
+    @media(max-width:850px){
+      .hero-photo-main{left:0;right:0;opacity:.72;background-size:cover;background-position:60% center;transform:none}
+      .hero::after{background:linear-gradient(90deg,rgba(6,7,8,.92),rgba(6,7,8,.48))}
+      .hero .hero-inner>*{max-width:560px}
+    }
+
 </style>
 </head>
 <body>
