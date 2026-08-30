@@ -58,13 +58,33 @@
     @media(max-width:520px){.gallery{grid-template-columns:1fr}.gallery .photo:nth-child(n){grid-column:1}}
 
 
-    /* IMAGE DISPLAY FIX — keep full photos visible without cutting heads/faces */
+    /* HERO PHOTO FIX — full sharp photo centered, blurred fill behind it */
     .hero{
-      background-size:contain!important;
-      background-repeat:no-repeat!important;
-      background-position:right center!important;
-      background-color:#060708!important;
+      position:relative!important;
+      isolation:isolate;
+      overflow:hidden;
+      background:#060708!important;
+      background-image:none!important;
     }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-28px;
+      z-index:-3;
+      background:url('hero-duo.jpg') center center / cover no-repeat;
+      filter:blur(24px) brightness(.42);
+      transform:scale(1.08);
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-2;
+      background:
+        linear-gradient(90deg,rgba(6,7,8,.96) 0%,rgba(6,7,8,.80) 31%,rgba(6,7,8,.38) 52%,rgba(6,7,8,.10) 76%,rgba(6,7,8,.22) 100%),
+        url('hero-duo.jpg') center center / contain no-repeat;
+    }
+    .hero-inner{position:relative;z-index:2}
     .profile-photo{
       height:auto!important;
       min-height:0!important;
@@ -92,10 +112,10 @@
     .gallery .photo{height:auto!important;min-height:0!important;overflow:hidden;background:#0b0d0e}
     .gallery .photo img{width:100%!important;height:auto!important;object-fit:contain!important;object-position:center!important;display:block!important}
     @media(max-width:850px){
-      .hero{background-size:cover!important;background-position:center center!important;}
+      .hero{background-image:none!important;}
     }
     @media(max-width:520px){
-      .hero{background-size:cover!important;background-position:center center!important;}
+      .hero{background-image:none!important;}
     }
 </style>
 </head>
