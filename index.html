@@ -224,6 +224,55 @@
     @media(max-width:850px){.logos{grid-template-columns:repeat(2,1fr)!important}}
     @media(max-width:520px){.logos{grid-template-columns:1fr!important}}
 
+    /* PERFORMANCE VIDEOS — aligned portrait players with elegant details */
+    .performance-grid{
+      display:grid;
+      grid-template-columns:1.3fr 1fr 1fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    .performance-card{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+      background:#0b0d0e;
+      border:1px solid #2d2921;
+      transition:transform .35s ease,border-color .35s ease;
+    }
+    .performance-card:hover{transform:translateY(-3px);border-color:#6a5734}
+    .performance-card.featured{border-color:#6a5734}
+    .performance-frame{
+      height:560px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      background:#030405;
+      border-bottom:1px solid #2d2921;
+    }
+    .performance-frame video{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:contain;
+      background:#030405;
+    }
+    .performance-copy{display:flex;flex-direction:column;flex:1;padding:24px}
+    .performance-copy .gold{font-size:10px;letter-spacing:3px}
+    .performance-copy h3{font-size:27px;line-height:1.12;margin:10px 0 12px;color:var(--ivory)}
+    .performance-copy p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}
+    @media(max-width:1000px){
+      .performance-grid{grid-template-columns:1fr 1fr}
+      .performance-card.featured{grid-column:1/-1}
+      .performance-card.featured .performance-frame{height:620px}
+      .performance-frame{height:540px}
+    }
+    @media(max-width:650px){
+      .performance-grid{grid-template-columns:1fr;gap:20px}
+      .performance-card.featured{grid-column:auto}
+      .performance-card.featured .performance-frame,.performance-frame{height:auto;aspect-ratio:9/16}
+    }
+
 </style>
 </head>
 <body>
@@ -249,11 +298,20 @@
 
 <section id="videos">
   <div class="wrap">
-    <div class="section-head"><div class="gold">Hear Harmonic Fusion</div><h2>Live Performance</h2><p>Performance showreel coming next. The site is ready for the final video once media hosting is connected.</p></div>
-    <div class="video-grid">
-      <div class="video"><div><div class="play">▶</div><strong>MAIN SHOWREEL</strong><p style="color:#777">Upload video from the admin later</p></div></div>
-      <div class="video"><div><div class="play">▶</div><strong>LOUNGE SET</strong></div></div>
-      <div class="video"><div><div class="play">▶</div><strong>LIVE FEATURE</strong></div></div>
+    <div class="section-head"><div class="gold">Hear Harmonic Fusion</div><h2>Live Performance</h2><p>Experience the duo's distinctive blend of expressive vocals, warm flugelhorn and refined live entertainment.</p></div>
+    <div class="performance-grid">
+      <article class="performance-card featured">
+        <div class="performance-frame"><video controls playsinline preload="metadata" poster="poster-duo.jpg"><source src="harmonic-fusion-duo-showreel.mp4" type="video/mp4">Your browser does not support HTML5 video.</video></div>
+        <div class="performance-copy"><div class="gold">Main Showreel</div><h3>Harmonic Fusion Live</h3><p>Three live duet performances showcasing the signature chemistry, versatility and elegant sound of Harmonic Fusion.</p></div>
+      </article>
+      <article class="performance-card">
+        <div class="performance-frame"><video controls playsinline preload="metadata" poster="poster-lester.jpg"><source src="lester-flugelhorn-feature-web.mp4" type="video/mp4">Your browser does not support HTML5 video.</video></div>
+        <div class="performance-copy"><div class="gold">Instrumental Feature</div><h3>Lester on Flugelhorn</h3><p>A collection of live performances featuring the warm, mellow and distinctive voice of the flugelhorn.</p></div>
+      </article>
+      <article class="performance-card">
+        <div class="performance-frame"><video controls playsinline preload="metadata" poster="poster-krizzia.jpg"><source src="krizzia-vocal-feature-web.mp4" type="video/mp4">Your browser does not support HTML5 video.</video></div>
+        <div class="performance-copy"><div class="gold">Vocal Feature</div><h3>Krizzia Live</h3><p>Four solo performances highlighting expressive vocals, graceful stage presence and a versatile international repertoire.</p></div>
+      </article>
     </div>
   </div>
 </section>
