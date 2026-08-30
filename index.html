@@ -58,33 +58,13 @@
     @media(max-width:520px){.gallery{grid-template-columns:1fr}.gallery .photo:nth-child(n){grid-column:1}}
 
 
-    /* HERO PHOTO FIX — full sharp photo centered, blurred fill behind it */
+    /* IMAGE DISPLAY FIX — keep full photos visible without cutting heads/faces */
     .hero{
-      position:relative!important;
-      isolation:isolate;
-      overflow:hidden;
-      background:#060708!important;
-      background-image:none!important;
+      background-size:contain!important;
+      background-repeat:no-repeat!important;
+      background-position:right center!important;
+      background-color:#060708!important;
     }
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:-28px;
-      z-index:-3;
-      background:url('hero-duo.jpg') center center / cover no-repeat;
-      filter:blur(24px) brightness(.42);
-      transform:scale(1.08);
-    }
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      z-index:-2;
-      background:
-        linear-gradient(90deg,rgba(6,7,8,.96) 0%,rgba(6,7,8,.80) 31%,rgba(6,7,8,.38) 52%,rgba(6,7,8,.10) 76%,rgba(6,7,8,.22) 100%),
-        url('hero-duo.jpg') center center / contain no-repeat;
-    }
-    .hero-inner{position:relative;z-index:2}
     .profile-photo{
       height:auto!important;
       min-height:0!important;
@@ -112,41 +92,10 @@
     .gallery .photo{height:auto!important;min-height:0!important;overflow:hidden;background:#0b0d0e}
     .gallery .photo img{width:100%!important;height:auto!important;object-fit:contain!important;object-position:center!important;display:block!important}
     @media(max-width:850px){
-      .hero{background-image:none!important;}
+      .hero{background-size:cover!important;background-position:center center!important;}
     }
     @media(max-width:520px){
-      .hero{background-image:none!important;}
-    }
-
-    /* HERO FINAL — slight zoom, centered duo, blurred blended sides, text kept left */
-    .hero::before{
-      inset:-35px!important;
-      background:url('hero-duo.jpg') center center / cover no-repeat!important;
-      filter:blur(30px) brightness(.34)!important;
-      transform:scale(1.10)!important;
-    }
-    .hero::after{
-      background:
-        linear-gradient(90deg,rgba(6,7,8,.97) 0%,rgba(6,7,8,.90) 25%,rgba(6,7,8,.48) 40%,rgba(6,7,8,.10) 55%,rgba(6,7,8,.08) 78%,rgba(6,7,8,.30) 100%),
-        url('hero-duo.jpg') center 48% / auto 108% no-repeat!important;
-    }
-    .hero .wrap{width:min(1180px,92%)!important}
-    .hero-inner{
-      max-width:470px!important;
-      margin-left:0!important;
-      padding:78px 0!important;
-    }
-    .hero h1{font-size:clamp(52px,6.1vw,82px)!important;line-height:.86!important;letter-spacing:2px!important}
-    .hero .lead{font-size:clamp(15px,1.7vw,20px)!important;letter-spacing:4px!important;white-space:nowrap}
-    @media(max-width:850px){
-      .hero::after{background:linear-gradient(90deg,rgba(6,7,8,.92),rgba(6,7,8,.30)),url('hero-duo.jpg') center 45% / auto 104% no-repeat!important}
-      .hero-inner{max-width:440px!important}
-      .hero .lead{white-space:normal}
-    }
-    @media(max-width:520px){
-      .hero::after{background:linear-gradient(90deg,rgba(6,7,8,.88),rgba(6,7,8,.32)),url('hero-duo.jpg') 56% center / cover no-repeat!important}
-      .hero-inner{max-width:82%!important;padding:64px 0!important}
-      .hero h1{font-size:48px!important}
+      .hero{background-size:cover!important;background-position:center center!important;}
     }
 </style>
 </head>
@@ -160,6 +109,7 @@
 
 <main>
 <section class="hero" id="home">
+  <div class="hero-photo-main" aria-hidden="true"></div>
   <div class="wrap hero-inner">
     <div class="eyebrow">International Live Music Duo</div>
     <h1>HARMONIC<br>FUSION <small>BAND</small></h1>
