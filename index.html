@@ -158,6 +158,34 @@
       .hero .hero-inner>*{max-width:560px}
     }
 
+    /* MEET THE DUO — equal, elegant card proportions */
+    .duo-grid{align-items:stretch}
+    .duo-card{display:flex;flex-direction:column;height:100%}
+    .duo-card .profile-photo{
+      width:100%!important;
+      height:500px!important;
+      min-height:500px!important;
+      overflow:hidden!important;
+      background:#0b0d0e;
+    }
+    .duo-card .profile-photo img{
+      width:100%!important;
+      height:100%!important;
+      object-fit:cover!important;
+      display:block!important;
+    }
+    .duo-card:first-child .profile-photo img{object-position:center 58%!important}
+    .duo-card:last-child .profile-photo img{object-position:center 43%!important}
+    .duo-copy{display:flex;flex-direction:column;flex:1}
+    .duo-copy p{flex:1}
+    .duo-copy .btn{align-self:flex-start;margin-top:auto}
+    @media(max-width:850px){
+      .duo-card .profile-photo{height:460px!important;min-height:460px!important}
+    }
+    @media(max-width:520px){
+      .duo-card .profile-photo{height:400px!important;min-height:400px!important}
+    }
+
 </style>
 </head>
 <body>
