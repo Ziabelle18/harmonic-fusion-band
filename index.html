@@ -98,7 +98,7 @@
       .hero{background-size:cover!important;background-position:center center!important;}
     }
 
-    /* HERO COMPOSITION FIX — centered duo, soft blended sides, text clear of faces */
+    /* FINAL HERO — full photo, feathered sides, and a clear text area */
     .hero{
       min-height:calc(100vh - 74px)!important;
       position:relative!important;
@@ -106,25 +106,38 @@
       background:#060708!important;
       isolation:isolate;
     }
-    /* blurred full-width copy of the photo fills the empty sides */
+    /* A dark, blurred copy fills the whole hero so there are no hard side bars. */
     .hero::before{
-      content:"";position:absolute;inset:-28px;z-index:-3;
+      content:"";position:absolute;inset:-34px;z-index:-3;
       background-image:url('hero-duo.jpg');
-      background-size:cover;background-position:center 45%;
-      filter:blur(28px) brightness(.32) saturate(.8);
-      transform:scale(1.08);opacity:.78;
+      background-size:cover;background-position:center 44%;
+      filter:blur(34px) brightness(.30) saturate(.82);
+      transform:scale(1.10);opacity:.9;
     }
-    /* dark cinematic blend, strongest behind the copy */
+    /* The left side stays dark enough for the words; the photo stays clear on the right. */
     .hero::after{
       content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-      background:linear-gradient(90deg,rgba(6,7,8,.98) 0%,rgba(6,7,8,.92) 24%,rgba(6,7,8,.62) 40%,rgba(6,7,8,.10) 55%,rgba(6,7,8,.10) 82%,rgba(6,7,8,.48) 100%);
+      background:
+        linear-gradient(90deg,
+          rgba(6,7,8,.99) 0%,
+          rgba(6,7,8,.96) 20%,
+          rgba(6,7,8,.82) 33%,
+          rgba(6,7,8,.42) 45%,
+          rgba(6,7,8,.08) 59%,
+          rgba(6,7,8,.06) 84%,
+          rgba(6,7,8,.42) 100%),
+        linear-gradient(0deg,rgba(6,7,8,.28),transparent 34%,transparent 76%,rgba(6,7,8,.18));
     }
-    /* sharp main photo: only a tiny zoom, both people kept visible */
+    /* The original photo remains sharp and almost unzoomed. Its outer edges fade
+       into the blurred copy instead of ending in a visible rectangle. */
     .hero-photo-main{
-      position:absolute;z-index:-2;top:0;bottom:0;left:42%;right:5%;
+      position:absolute;z-index:-2;inset:0;
       background-image:url('hero-duo.jpg');
-      background-repeat:no-repeat;background-size:contain;background-position:center center;
-      transform:scale(1.035);transform-origin:center center;
+      background-repeat:no-repeat;
+      background-size:auto 102%;
+      background-position:72% center;
+      -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.20) 11%,#000 24%,#000 88%,rgba(0,0,0,.55) 96%,transparent 100%);
+      mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.20) 11%,#000 24%,#000 88%,rgba(0,0,0,.55) 96%,transparent 100%);
     }
     .hero .hero-inner{
       width:min(1180px,90%);max-width:none!important;margin:0 auto!important;
@@ -133,13 +146,13 @@
     .hero .hero-inner>*{max-width:520px}
     .hero h1{font-size:clamp(58px,6vw,88px)!important;line-height:.88!important}
     @media(max-width:1000px){
-      .hero-photo-main{left:38%;right:0;transform:scale(1.02)}
+      .hero-photo-main{background-size:auto 100%;background-position:76% center}
       .hero .hero-inner>*{max-width:470px}
       .hero h1{font-size:clamp(54px,7vw,76px)!important}
     }
     @media(max-width:850px){
-      .hero-photo-main{left:0;right:0;opacity:.72;background-size:cover;background-position:60% center;transform:none}
-      .hero::after{background:linear-gradient(90deg,rgba(6,7,8,.92),rgba(6,7,8,.48))}
+      .hero-photo-main{opacity:.74;background-size:cover;background-position:60% center;-webkit-mask-image:none;mask-image:none}
+      .hero::after{background:linear-gradient(90deg,rgba(6,7,8,.95),rgba(6,7,8,.48)),linear-gradient(0deg,rgba(6,7,8,.52),transparent 55%)}
       .hero .hero-inner>*{max-width:560px}
     }
 
