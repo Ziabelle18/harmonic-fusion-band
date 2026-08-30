@@ -117,6 +117,37 @@
     @media(max-width:520px){
       .hero{background-image:none!important;}
     }
+
+    /* HERO FINAL — slight zoom, centered duo, blurred blended sides, text kept left */
+    .hero::before{
+      inset:-35px!important;
+      background:url('hero-duo.jpg') center center / cover no-repeat!important;
+      filter:blur(30px) brightness(.34)!important;
+      transform:scale(1.10)!important;
+    }
+    .hero::after{
+      background:
+        linear-gradient(90deg,rgba(6,7,8,.97) 0%,rgba(6,7,8,.90) 25%,rgba(6,7,8,.48) 40%,rgba(6,7,8,.10) 55%,rgba(6,7,8,.08) 78%,rgba(6,7,8,.30) 100%),
+        url('hero-duo.jpg') center 48% / auto 108% no-repeat!important;
+    }
+    .hero .wrap{width:min(1180px,92%)!important}
+    .hero-inner{
+      max-width:470px!important;
+      margin-left:0!important;
+      padding:78px 0!important;
+    }
+    .hero h1{font-size:clamp(52px,6.1vw,82px)!important;line-height:.86!important;letter-spacing:2px!important}
+    .hero .lead{font-size:clamp(15px,1.7vw,20px)!important;letter-spacing:4px!important;white-space:nowrap}
+    @media(max-width:850px){
+      .hero::after{background:linear-gradient(90deg,rgba(6,7,8,.92),rgba(6,7,8,.30)),url('hero-duo.jpg') center 45% / auto 104% no-repeat!important}
+      .hero-inner{max-width:440px!important}
+      .hero .lead{white-space:normal}
+    }
+    @media(max-width:520px){
+      .hero::after{background:linear-gradient(90deg,rgba(6,7,8,.88),rgba(6,7,8,.32)),url('hero-duo.jpg') 56% center / cover no-repeat!important}
+      .hero-inner{max-width:82%!important;padding:64px 0!important}
+      .hero h1{font-size:48px!important}
+    }
 </style>
 </head>
 <body>
