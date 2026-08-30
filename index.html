@@ -273,6 +273,26 @@
       .performance-card.featured .performance-frame,.performance-frame{height:auto;aspect-ratio:9/16}
     }
 
+    /* CONTACT — direct email and two clearly labelled WeChat QR codes */
+    .contact-email{
+      display:block;
+      padding:14px 0 18px;
+      border-bottom:1px solid #29251e;
+      color:var(--gold2);
+      font-size:14px;
+      letter-spacing:1px;
+      word-break:break-word;
+    }
+    .contact-email:hover{color:var(--gold)}
+    .wechat-title{margin:24px 0 14px;color:var(--ivory);font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:400}
+    .wechat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .wechat-card{margin:0;border:1px solid #302b22;background:#f4f1e9;padding:10px;text-align:center}
+    .wechat-card img{display:block;width:100%;height:auto;background:#fff}
+    .wechat-card figcaption{padding:10px 5px 3px;color:#171717;font-size:12px;line-height:1.45;letter-spacing:1px}
+    .wechat-card strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:16px;font-weight:400}
+    .wechat-card span{display:block;margin-top:3px;color:#6e675c;font-size:10px;letter-spacing:1.2px;text-transform:uppercase}
+    @media(max-width:520px){.wechat-grid{grid-template-columns:1fr}.wechat-card{max-width:310px;margin:0 auto;width:100%}}
+
 </style>
 </head>
 <body>
@@ -359,11 +379,18 @@
 <div class="photo"><img src="mmexport1788085822543.jpg" alt="Harmonic Fusion live at Sheraton Guangzhou Nansha" loading="lazy"></div>
 </div></div></section>
 
-<section id="repertoire"><div class="wrap"><div class="section-head"><div class="gold">Versatile Live Music</div><h2>Repertoire</h2><p>A flexible selection of music designed for hotel lounges, dining, special occasions and international audiences.</p></div><div class="repertoire"><span class="pill">Pop</span><span class="pill">Jazz</span><span class="pill">Soul & R&B</span><span class="pill">Ballads</span><span class="pill">Lounge</span><span class="pill">Classics</span><span class="pill">Contemporary</span></div></div></section>
+<section id="repertoire"><div class="wrap"><div class="section-head"><div class="gold">Versatile Live Music</div><h2>Repertoire</h2><p>A refined and flexible selection designed for hotel lounges, dining, special occasions and international audiences. Alongside a wide English repertoire, Harmonic Fusion performs a curated collection of Chinese songs, with selected Korean and Japanese favorites for multicultural guests.</p></div><div class="repertoire"><span class="pill">Pop</span><span class="pill">Jazz</span><span class="pill">Soul & R&B</span><span class="pill">Ballads</span><span class="pill">Lounge</span><span class="pill">Classics</span><span class="pill">Contemporary</span><span class="pill">Chinese Songs</span><span class="pill">Selected Korean</span><span class="pill">Selected Japanese</span></div></div></section>
 
-<section class="contact" id="contact"><div class="wrap contact-grid"><div class="copy"><div class="gold">Booking & Enquiries</div><h2>Bring Harmonic Fusion<br>to Your Venue.</h2><p>Available for luxury hotel, resort and special-event engagements worldwide, and warmly welcoming future opportunities with distinguished international cruise lines.</p></div><div class="contact-box"><h3>Contact the Duo</h3><div class="contact-line">EMAIL — add later</div><div class="contact-line">WECHAT — add later</div><div class="contact-line">WHATSAPP — add later</div><div class="buttons"><a class="btn primary" href="mailto:">SEND BOOKING INQUIRY</a></div></div></div></section>
+<section class="contact" id="contact"><div class="wrap contact-grid"><div class="copy"><div class="gold">Booking & Enquiries</div><h2>Bring Harmonic Fusion<br>to Your Venue.</h2><p>Available for luxury hotel, resort and special-event engagements worldwide, and warmly welcoming future opportunities with distinguished international cruise lines.</p><div class="buttons"><a class="btn primary" href="mailto:krizzialester@gmail.com?subject=Booking%20Enquiry%20for%20Harmonic%20Fusion">SEND BOOKING INQUIRY</a></div></div><div class="contact-box"><h3>Contact the Duo</h3><div class="gold">Email</div><a class="contact-email" href="mailto:krizzialester@gmail.com">krizzialester@gmail.com</a><h4 class="wechat-title">Connect on WeChat</h4><div class="wechat-grid"><figure class="wechat-card"><img src="wechat-krizzia.png" alt="Krizzia WeChat QR code" loading="lazy"><figcaption><strong>Krizzia</strong><span>Scan to add on WeChat</span></figcaption></figure><figure class="wechat-card"><img src="wechat-lester.jpg" alt="Mark Lester Perez WeChat QR code" loading="lazy"><figcaption><strong>Mark Lester</strong><span>Scan to add on WeChat</span></figcaption></figure></div></div></div></section>
 </main>
 
 <footer>HARMONIC FUSION BAND &nbsp; • &nbsp; INTERNATIONAL LIVE MUSIC DUO</footer>
+<script>
+  document.querySelectorAll('.performance-frame video').forEach(function(video){
+    video.addEventListener('ended',function(){
+      this.load();
+    });
+  });
+</script>
 </body>
 </html>
